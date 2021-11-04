@@ -1,23 +1,81 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
+let yourName = "Ryan Rasmussen" 
 
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
-
-// We'll use these variables to track the counts of each cookie type
-let gb = 0      // Gingerbread
-let cc = 0      // Chocolate Chip
-let sugar = 0   // Sugar Sprinkle
-
-// Code to update name display 
 document.getElementById('credit').textContent = `Created by ${yourName}`
 
-// Event listener for clicks on the "+" button for Gingerbread cookies
-document.getElementById('add-gb').addEventListener('click', function() {
-    // HINT: You can delete this console.log after you no longer need it!
-    console.log('Gingerbread + button was clicked!')
+let gb = 0    
+let cc = 0     
+let sugar = 0 
 
-    // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+
+let gbQuantity = document.querySelector('#qty-gb')
+let ccQuantity = document.querySelector('#qty-cc')
+let sugarQuantity = document.querySelector('#qty-sugar')
+
+let totalQuantity = document.querySelector('#qty-total')
+
+let plusGb = document.querySelector('#add-gb')
+let minusGb = document.querySelector('#minus-gb')
+
+
+let plusCc = document.querySelector('#add-cc')
+let minusCc = document.querySelector('#minus-cc')
+
+
+let plusSugar = document.querySelector('#add-sugar')
+let minusSugar = document.querySelector('#minus-sugar')
+
+
+
+// Gingerbread Functions 
+
+plusGb.addEventListener('click', function(){
+    gb += 1
+    console.log(gb)
+    gbQuantity.textContent = gb
+    totalQuantity.textContent = gb+cc+sugar
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+minusGb.addEventListener('click', function(){
+    if(gb > 0){
+        gb -= 1
+        console.log(gb)
+        gbQuantity.textContent = gb
+        totalQuantity.textContent = gb+cc+sugar
+    }
+})
+
+//Chocolate Chip Functions 
+
+plusCc.addEventListener('click', function(){
+    cc += 1
+    console.log(cc)
+    ccQuantity.textContent = cc
+    totalQuantity.textContent = gb+cc+sugar
+})
+
+minusCc.addEventListener('click', function(){
+    if(cc > 0){
+        cc -= 1
+        console.log(cc)
+        ccQuantity.textContent = cc
+        totalQuantity.textContent = gb+cc+sugar
+    }
+})
+
+//Sugar Cookie Functions
+
+plusSugar.addEventListener('click', function(){
+    sugar += 1
+    console.log(sugar)
+    sugarQuantity.textContent = sugar
+    totalQuantity.textContent = gb+cc+sugar
+})
+
+minusSugar.addEventListener('click', function(){
+    if(sugar > 0){
+        sugar -= 1
+        console.log(sugar)
+        sugarQuantity.textContent = sugar
+        totalQuantity.textContent = gb+cc+sugar
+    }
+})
